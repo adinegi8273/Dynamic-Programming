@@ -199,12 +199,14 @@
 // int s1,s2;
 // string target;
 
+// long long src;
 
 // int solve(int index,int started,int tight,int sum,string s){
     
 //     if(index == s.size()){
-        
-//         if(sum >= s1 && sum <= s2){
+
+//         long long num = stoll(s);
+//         if(sum >= s1 && sum <= s2 && num >= src){
 //             return 1;
 //         }
 //         return 0;
@@ -219,35 +221,39 @@
 //     int cnt = 0;
 //     started = 1;
 //     int limit = target[index] - '0';
+
 //     if(tight == 1){
+
 //         //here i have to replace the index from 0 --> limit
 //         for(int i=0;i<limit;i++){
+//             s[index] = '0' + i;
 //             cnt += solve(index+1,started,0,sum + i,s);
 //         }
-        
 //         cnt += solve(index+1,started,1,sum + limit,s);
 //     }
 //     else{
-//         //here i have the choice to replace from 0--->9
         
+//         //here i have the choice to replace from 0--->9
+
 //         for(int i=0;i<10;i++){
+//             s[index] = '0' + i;
 //             cnt  += solve(index + 1,started,0,sum + i,s);
 //         }
 //     }
-    
+
 //     return cnt;
 // }
 // int findSum(int l,int r,int sum1,int sum2){
     
-    
 //     target = to_string(r);
+//     src = l;
 //     s1 = sum1;
 //     s2 = sum2;
     
-//     string lead(18 - target.size(),'0');
+//     string lead(19 - target.size(),'0');
 //     target = lead + target;
     
-//     string source(18,'0');
+//     string source(19,'0');
     
 //     return solve(0,0,1,0,source);
     
